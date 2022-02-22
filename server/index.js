@@ -4,11 +4,14 @@ const morgan = require('morgan');
 // const db = require('./db');
 const PORT = process.env.PORT || 8080;
 const app = express();
+require('dotenv').config();
 // const server = app.listen(PORT, () => console.log(`Connected to port: ${PORT}`));
 // const io = require('socket.io')(server);
 
 // handle sockets
 // require('./socket')(io);
+const secretSigningPhrase = process.env.SECRET_SIGNING_PHRASE
+console.log(secretSigningPhrase);
 
 module.exports = app;
 app.listen(PORT, () => console.log(`Connected to port: ${PORT}`))
